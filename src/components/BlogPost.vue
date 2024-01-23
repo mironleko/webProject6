@@ -9,7 +9,7 @@
       @comment-added="fetchComments" 
  />
     </div>
-    <p v-else>Loading blog...</p>
+    <p v-else>Trazeni blog ne postoji.</p>
   </div>
 </template>
 
@@ -31,16 +31,15 @@ export default {
   async created() {
     const blogId = this.$route.params.id;
     await this.fetchBlogData(blogId);
+    if (this.blog) {
     await this.fetchComments();
-  },
+  }  },
   methods: {
     async fetchBlogData(blogId) {
       const blogRef = doc(db, 'blogs', blogId);
       const blogSnapshot = await getDoc(blogRef);
       if (blogSnapshot.exists()) {
         this.blog = { id: blogSnapshot.id, ...blogSnapshot.data() };
-      } else {
-        console.log('No such blog!');
       }
     },
     async fetchComments() {
@@ -126,7 +125,7 @@ h3 {
 button.back-button {
   background-color: #f8f9fa;
   color: #333;
-  margin-bottom: 2rem; /* Space above the back button */
+  margin-bottom: 2rem;
   transition: background-color 0.3s ease;
 }
 

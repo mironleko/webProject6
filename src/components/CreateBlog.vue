@@ -35,7 +35,7 @@
         const newBlog = {
     title: this.blogTitle,
     content: this.blogContent,
-    created_at: new Date() // Optional: Add a timestamp
+    created_at: new Date()
   };
 
   try {
@@ -83,7 +83,7 @@ textarea {
 
 .form-buttons {
   display: flex;
-  justify-content: space-between; /* Stvara razmak između gumba */
+  justify-content: space-between; 
   margin-top: 10px;
 }
 
@@ -95,7 +95,7 @@ button, .create-blog-link {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  flex: 1; /* Oba gumba zauzimaju jednak prostor */
+  flex: 1;
   margin: 5px;
 }
 

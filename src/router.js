@@ -2,8 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from './views/HomePage.vue';
 import AboutPage from './views/AboutPage.vue';
 import BlogPost from './components/BlogPost.vue';
-import NotFoundPage from './components/NotFoundPage.vue'; // Dodali smo NotFoundPage
-import CreateBlog from './components/CreateBlog.vue'; // Uvezli smo novu komponentu za kreiranje blogova
+import NotFoundPage from './components/NotFoundPage.vue'; 
+import CreateBlog from './components/CreateBlog.vue'; 
 import BlogList from './components/BlogList.vue'
 
 const routes = [

@@ -2,15 +2,18 @@
   <div class="blog-list">
     <h2>Popis blogova:</h2>
     <ul>
-      <li v-for="blog in summarizedBlogs" :key="blog.id" class="blog-item">
-        <router-link :to="'/blog/' + blog.id" class="blog-link">
-          <h3>{{ blog.title }}</h3>
+      <li v-for="blog in summarizedBlogs" :key="blog.id">
+        <router-link :to="'/blog/' + blog.id" class="blog-item-link">
+          <div class="blog-item">
+            <h3>{{ blog.title }}</h3>
+            <p class="blog-summary">{{ blog.summary }}</p>
+          </div>
         </router-link>
-        <p class="blog-summary">{{ blog.summary }}</p>
       </li>
     </ul>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -56,19 +59,19 @@ export default {
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
+.blog-item-link {
+  text-decoration: none;
+  color: inherit; 
+}
+
 .blog-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  background-color: #e6e6e6; /* Slightly darker background on hover */
+  background-color: #e6e6e6;
 }
 
-.blog-link {
-  text-decoration: none;
+.blog-item h3 {
   color: #007bff;
-}
-
-.blog-link h3 {
-  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   transition: color 0.3s ease;
 }
